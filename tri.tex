@@ -1,0 +1,43 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{graphicx}
+\graphicspath{ {./5600/} }
+\usepackage{amsmath}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\title{ Assignment1}
+\author{PARIMISETTY HARINADHA (CS19RESCH11004)}
+\begin{document}
+\maketitle
+\newpage
+\begin{abstract}
+This document explains the concept of collinear and whether the triangle formed by given 3 points is right angled triangle or not.
+\end{abstract}
+Download all python codes from 
+\framebox[1\width]{ https://github.com/cs19resch11004/5600/hari }
+Download all Latex-tikz codes from 
+\framebox[1.1\width]{ https://github.com/cs19resch11004/5600/hari} 
+\section{Problem}
+Without using the Pythagoras theorem, show that \myvec{ 4 \\ 4 }, \myvec{ 3 \\ 5 } and \myvec{ -1 \\ -1 } are the vertices of a right angled triangle?
+
+\section{Solution}
+The direction vectors of A-B, A-C and B-C are
+\begin{align}
+	A-B=\myvec{-1 \\ 1} \\
+	A-C=\myvec{-5 \\ -5}\\
+	B-C=\myvec{-4 \\ -6} 
+\end{align}
+\begin{enumerate}
+\item A-B . B-C = \begin{align} \myvec{ -1 & 1 } . \myvec{ -4 \\ -6 } = -2\end{align}\\
+A-B . B-C = -2 $\neq$ 0
+Sides AB and BC of triangle are not perpendicular.
+
+\item A-C . B-C = \begin{align} \myvec{ -5 & -5 } . \myvec{ -4 \\ -6 } = 50\end{align}\\
+A-C . B-C = 50 $\neq$ 0 
+Sides AC and BC of triangle are not perpendicular.
+
+\item A-B . A-C = \begin{align} \myvec{ -1 & 1 } . \myvec{ -5 \\ -5 } = 0\end{align}\\
+A-B . A-C = 0 
+Sides AB and AC of triangle are perpendicular to each other and the right angle at vertex \myvec{ 4 \\ 4 }, and the following figure represents the triangle formed by given points A, B and C.  
+\includegraphics[width=11cm, height=7cm]{vihi}
+\end{enumerate}
+\end{document}
