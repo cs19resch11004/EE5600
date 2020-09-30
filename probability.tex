@@ -1,0 +1,41 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\title{ Assignment2}
+\author{PARIMISETTY HARINADHA (CS19RESCH11004)}
+\begin{document}
+\maketitle
+\newpage
+\begin{abstract}
+This document explains the concept of independent events and also test whether given 2 events are independent or not.
+\end{abstract}
+Download all python codes from 
+\framebox[1\width]{ https://github.com/cs19resch11004/5600/hari }
+Download all Latex-tikz codes from 
+\framebox[1.1\width]{ https://github.com/cs19resch11004/5600/hari} 
+\section{Problem}
+A die is thrown. If E is the event ”the number appearing is a multiple of 3” and F be the event ”the number appearing is even” then find whether E and F are independent ?
+
+\section{Explanation}
+    Two events E and F are said to be independent iff ${Pr(A \cap B)}={Pr(A)}{Pr(B)}$
+
+\section{Solution}
+Let S be a sample space, for the random experiment, rolling a die.
+\begin{align}
+        S &= \{1, 2, 3, 4, 5, 6\} \\ 
+        n(S) &= 6 \\
+	E &= \{3, 6\} \\ 
+	n(E) &= 2 \\
+	F &= \{2, 4, 6\} \\
+	n(F) &= 3 
+\end{align}
+We need to check whether the following equation is true or false,
+${Pr(E \cap F)} = {Pr(E)}{Pr(F)}$
+\begin{align}
+        {Pr(E \cap F)} &= \frac{1}{6} \\
+        {Pr(E)}{Pr(F)} &= (\frac{2}{6}) (\frac{3}{6}) = \frac{1}{6}
+    \end{align}
+\section{Conclusion}
+Above two values are equal, so given two events E and F are independent.
+\end{document}
