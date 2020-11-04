@@ -1,0 +1,55 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{amsmath}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\title{Assignment 1}
+\author{PARIMISETTY HARINADHA (CS19RESCH11004)}
+\begin{document}
+\maketitle
+\newpage
+\begin{abstract}
+This document explains the concept of Normal vector, Direction Vector and Y-intercept of a straight line by solving number of problems.
+\end{abstract}
+Download all python codes from 
+\framebox[1\width]{ https://github.com/cs19resch11004/hari }
+Download all Latex-tikz codes from 
+\framebox[1.1\width]{ https://github.com/cs19resch11004/hari} 
+
+\section{Problem}
+Find the direction vectors and and y-intercepts of the following lines
+\begin{align} 
+    		\myvec{ 1 & 7 } \vec{X}	= 0\\
+    		\myvec{ 6 & 3 }	\vec{X}	= 5\\
+		\myvec{ 0 & 1 }	\vec{X}	= 0
+\end{align}
+Solution:
+\begin{align}
+	\vec{n} = \myvec{ a \\ b }\\
+	\vec{m} = \myvec{ b \\ -a }
+\end{align}
+\begin{enumerate}
+\item Normal vector $\vec{n}$ is   \begin{align}
+	\vec{n} = \myvec{ 1 \\ 7 }
+\end{align}
+Direction Vector
+\begin{align}
+		\vec{m} = \myvec{ 7 \\ -1 } 
+\end {align}
+Y-intercept = 0
+\item Normal vector $\vec{n}$ is \begin{align}
+	\vec{n} = \myvec{ 6 \\ 3 }
+\end{align}
+Direction Vector
+\begin{align}
+		\vec{m} = \myvec{ 3 \\ -6 }
+\end{align} 	
+Y-intercept = 5/3
+\item Normal vector $\vec{n}$ is  \begin{align}
+	\vec{n} = \myvec{ 0 \\ 1 }
+\end{align} 
+Direction Vector
+\begin{align}
+		\vec{m} = \myvec{ 1 \\ 0 }
+\end{align}
+Y-intercept =  0
+\end{enumerate}
+\end{document}
