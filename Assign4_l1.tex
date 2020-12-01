@@ -32,25 +32,25 @@ Download all Latex-tikz codes from
 \section{Problem}
 Tracing of following equation
 \begin{align}
-    x^2+xy+y^2+x+y-1=0 
+    x^2+xy+y^2+x+y-1=0 \label{eq:1}
 \end{align}
 \section{solution}
 The general equation of second degree is given by
 \begin{align}
-ax^2+2bxy+cy^2+2dx+2ey+f=0
+ax^2+2bxy+cy^2+2dx+2ey+f=0 
 \end{align}
 
 and can be expressed as
 \begin{align}
-\vec{x}^T V\vec{x}+2\vec{u}^T\vec{x}+f=0 
+\vec{x}^T V\vec{x}+2\vec{u}^T\vec{x}+f=0 \label{eq:3}
 \end{align}
 where
 \begin{align}
-V &= V^T = \myvec{a & b \\ b & c}
+V &= V^T = \myvec{a & b \\ b & c}\label{eq:4}
 \\
 \vec{u} &= \myvec{d \\ e}
 \end{align}
-Comparing equations 1 and 3 we get
+Comparing equations \eqref{eq:1} and \eqref{eq:3} we get
 \begin{align}
 V=V^T&=\myvec{1 & \frac{1}{2} \\\\ \frac{1}{2} &1} \\
     \vec{u}&=\myvec{\frac{1}{2} \\\\\frac{1}{2} } \\
@@ -75,12 +75,12 @@ V-\lambda I
 \end{align}
 \begin{align}
 (1-\lambda)(1-\lambda)-1/4=0\\
-\lambda_{1}=\frac{1}{2},   \lambda_{2}=\frac{3}{2}
+\lambda_{1}=\frac{1}{2},   \lambda_{2}=\frac{3}{2} \label{eq:13}
 \end{align}
 The eigenvector $\vec{p}$ is defined as 
 \begin{align}
     V\vec{p}&=\lambda\vec{p}\\
-    \implies (V-\lambda I)\vec{p}&=0
+    \implies (V-\lambda I)\vec{p}&=0 \label{eq:15}
 \end{align}
 For $\lambda_1=\frac{1}{2}$ ,
 \begin{align}
@@ -96,10 +96,10 @@ For $\lambda_1=\frac{1}{2}$ ,
 
 \begin{align}
 &\xleftrightarrow{R_2\leftarrow R_2 - R_1}
-\myvec{1 & 1 \\ 0 & 0 }
+\myvec{1 & 1 \\ 0 & 0 } \label{eq:18}
 \end{align}
 
-Subsituting equation 18 in an equation 15 we get
+Subsituting equation \eqref{eq:18} in an equation \eqref{eq:15} we get
 \begin{align}
         &   \myvec{1 & 1 \\ 0& 0}\myvec{u_1 \\ u_2}=\myvec{0 \\ 0}
 \end{align}
@@ -116,7 +116,7 @@ Eigen vector $\vec{p_1}$ is given by
 \end{align}
 Let $t=1$, we get
 \begin{align}
-        \vec{p_1}&=\myvec{1 \\-1 }
+        \vec{p_1}&=\myvec{1 \\-1 } \label{eq:22}
 \end{align}
 For $\lambda_2=\frac{3}{2}$ ,
 \begin{align}
@@ -133,10 +133,10 @@ By row reduction,
 
 \begin{align}
 &\xleftrightarrow{R_2\leftarrow R_2 + R_1}
-\myvec{-1 & 1 \\ 0 & 0 }
+\myvec{-1 & 1 \\ 0 & 0 } \label{eq:25}
 \end{align}
 
-Subsituting equation 25 in an equation 15 we get
+Subsituting equation \eqref{eq:25} in an equation \eqref{eq:15} we get
 \begin{align}
         &   \myvec{-1 & 1 \\ 0& 0}\myvec{u_1 \\ u_2}=\myvec{0 \\ 0}
 \end{align}
@@ -153,7 +153,7 @@ Eigen vector $\vec{p_2}$ is given by
 \end{align}
 Let $t=1$, we get
 \begin{align}
-        \vec{p_2}&=\myvec{1 \\1 }
+        \vec{p_2}&=\myvec{1 \\1 }\label{eq:29}
 \end{align}
 
 By eigen decompostion V can be represented by
@@ -163,17 +163,17 @@ By eigen decompostion V can be represented by
 
 where 
 \begin{align}
-P&=\myvec{\vec{p_1} & \vec{p_2}}\label{2.32}\\
-D&=\myvec{\lambda_1 & 0 \\0 & \lambda_2}
+P&=\myvec{\vec{p_1} & \vec{p_2}}\label{eq:31}\\
+D&=\myvec{\lambda_1 & 0 \\0 & \lambda_2}\label{eq:32}
 \end{align}
 
-Substituting equations 22, 29 in equation 31 we get 
+Substituting equations \eqref{eq:22}, \eqref{eq:29} in equation \eqref{eq:31} we get 
 \begin{align}
     P&=\myvec{1 & 1 \\-1 & 1}
 \end{align}
-Substituting equation 13 in 32 we get
+Substituting equation \eqref{eq:13} in \eqref{eq:32} we get
 \begin{align}
-       D&=\myvec{\frac{1}{2} & 0\\0 & \frac{3}{2}}
+       D&=\myvec{\frac{1}{2} & 0\\0 & \frac{3}{2}} \label{eq:34}
 \end{align}
 
 Centre of the ellipse is given by 
@@ -194,7 +194,7 @@ b=\sqrt{\frac{\vec{u}^TV^{-1}\vec{u}-f}{\lambda_2}}=0.9428090416
 
 Standard ellipse can be written in the form:
 \begin{align}
-    \vec{y}^TD\vec{y}=\vec{u}^TV^{-1}\vec{u}-f
+    \vec{y}^TD\vec{y}=\vec{u}^TV^{-1}\vec{u}-f\label{eq:40}
 \end{align}
 
 Simplifying we get:
@@ -202,22 +202,22 @@ Simplifying we get:
 \vec{u}^TV^{-1}\vec{u}=
 \myvec{\frac{1}{2} &\frac{1}{2}}
 \myvec{\frac{4}{3} & \frac{-2}{3}\\\frac{-2}{3} & \frac{4}{3}}
-\myvec{\frac{1}{2}\\\frac{1}{2}} = \frac{1}{3}
+\myvec{\frac{1}{2}\\\frac{1}{2}} = \frac{1}{3}\label{eq:41}
 \end{align}
 
-Substituting equation 41 in equation 40, then we have :
-\begin{align}\label{t}
- \vec{y}^TD\vec{y}=\frac{4}{3}  
+Substituting equation \eqref{eq:41} in equation \eqref{eq:40}, then we have :
+\begin{align}
+ \vec{y}^TD\vec{y}=\frac{4}{3}  \label{eq:42}
 \end{align}
 
-Substituting  equation 34, in equation \eqref{t} 
+Substituting  equation \eqref{eq:34}, in equation \eqref{eq:42} 
 \begin{align}
     \vec{y}^T \myvec{\frac{1}{2} & 0\\0 &\frac{3}{2}}\vec{y}=\frac{4}{3}
 \end{align}
 \begin{align}
     \vec{y}^T \myvec{\frac{8}{3} & 0\\0 &\frac{8}{9}}\vec{y}=1
 \end{align}
-The following figure verifies the given equation 3 as ellipse with centre $\myvec{\frac{-1}{3}\\\frac{-1}{3}}$
+The following figure verifies the given equation \eqref{eq:3} as ellipse with centre $\myvec{\frac{-1}{3}\\\frac{-1}{3}}$
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{fig.png}
