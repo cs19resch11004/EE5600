@@ -1,0 +1,95 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{graphicx}
+\graphicspath{ {./5609/Assign4/} }
+
+\makeatletter
+\newcommand\xleftrightarrow[2][]{%
+  \ext@arrow 9999{\longleftrightarrowfill@}{#1}{#2}}
+\newcommand\longleftrightarrowfill@{%
+  \arrowfill@\leftarrow\relbar\rightarrow}
+\makeatother
+
+
+\newcommand\leftarrowS{\leftarrow\joinrel\smalldollar}
+\newcommand\rightarrowS{\smalldollar\joinrel\rightarrow}
+
+
+\usepackage{amsmath}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\title{Assignment 5}
+\author{PARIMISETTY HARINADHA (CS19RESCH11004)}
+\begin{document}
+\maketitle
+\newpage
+\begin{abstract}
+This assignment deals with QR decomposition .
+\end{abstract}
+Download all python codes from 
+\framebox[1\width]{ https://github.com/cs19resch11004/hari }
+Download all Latex-tikz codes from 
+\framebox[1.1\width]{ https://github.com/cs19resch11004/hari} 
+\section{Problem}
+Perform QR decomposition on matrix V
+\begin{align}
+    V=\myvec{ 1 & \frac{1}{2} \\ \frac{1}{2} & 1 }
+\end{align}
+\section{Solution}
+The columns of matrix V can be represented in $\vec{\alpha}$ and $\vec{\beta}$ as
+\begin{align}
+    \implies\vec{\alpha}=\myvec{1 \\ \frac{1}{2}}\\
+    \vec{\beta}=\myvec{\frac{1}{2}\\ 1}
+\end{align}
+
+For QR decomposition, matrix V can be expressed as
+\begin{align}
+    V=QR \label{eq:4}
+\end{align}
+
+where, Q and R are expressed as
+\begin{align}
+    Q=\myvec{\vec{u_1} & \vec{u_2}} \label{eq:5}\\
+    R=\myvec{k_1 & r_1 \\ 0 & k_2} \label{eq:6}
+\end{align}
+Note that R is an upper triangular matrix.\\
+
+Now,we calculate
+\begin{align}
+    k_1=\| \mathbf{\vec{\alpha}} \|=\frac{\sqrt{5}}{2}\\
+    \vec{u_1}=\frac{\vec{\alpha}}{k_1}=\frac{2}{\sqrt{5}}\myvec{1 \\ \frac{1}{2}}=\myvec{\frac{2}{\sqrt{5}} \\ \frac{1}{\sqrt{5}}}\\
+r_1=\frac{\vec{u_1}^T\vec{\beta}}{\| \mathbf{\vec{u_1}} \|^2}=\myvec{\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}}}\myvec{\frac{1}{2} \\ 1}=\frac{2}{\sqrt{5}}\\
+\vec{u_2}=\frac{\vec{\beta}-r_1\vec{u_1}}{\| \vec{\beta}-r_1\vec{u_1} \|}\label{eq:10}
+\end{align}
+
+Consider
+\begin{align}
+    \vec{\beta}-r_1\vec{u_1}&=\myvec{\frac{1}{2} \\\\ 1}-\frac{2}{\sqrt{5}}\myvec{\frac{2}{\sqrt{5}} \\\\ \frac{1}{\sqrt{5}}}\\
+\beta-r_1\vec{u_1}&=\myvec{\frac{-3}{10} \\\\ \frac{3}{5}} \label{eq:12}\\
+\| \beta-r_1\vec{u_1} \|&=\frac{{2\sqrt{5}}}{3} \label{eq:13}
+\end{align}
+
+Substitute equation \eqref{eq:12}, equation \eqref{eq:13} in an equation \eqref{eq:10}, we get
+
+\begin{align}
+    \vec{u_2}&=\myvec{\frac{-1}{\sqrt{5}} \\\\ \frac{2}{\sqrt{5}}}\\
+    k_2&=\vec{u_2}^T\beta=\myvec{\frac{-1}{\sqrt{5}} & \frac{2}{\sqrt{5}}}\myvec{\frac{1}{2} \\\\ 1}\\
+    \implies k_2&=\frac{3}{2\sqrt{5}}
+\end{align}
+
+Therefore, from \eqref{eq:5} and \eqref{eq:6}
+\begin{align}
+    Q=\myvec{\frac{2}{\sqrt{5}} & \frac{-1}{\sqrt{5}} \\ \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}}\\
+    R=\myvec{\frac{\sqrt{5}}{2} & \frac{2}{\sqrt{5}} \\ 0 & \frac{3}{2\sqrt{5}}}
+\end{align}
+
+Note that,
+\begin{align}
+    Q^TQ&=\myvec{\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} \\ \frac{-1}{\sqrt{5}} & \frac{2}{\sqrt{5}}}\myvec{\frac{2}{\sqrt{5}} & \frac{-1}{\sqrt{5}} \\ \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}}=\myvec{1 & 0\\ 0 & 1}=I\\
+Q^TQ&=\myvec{1 & 0\\ 0 & 1}=I
+\end{align}
+
+Now matrix V can be written as \eqref{eq:4}
+\begin{align}
+    \myvec{1 & \frac{1}{2} \\ \frac{1}{2} & 1}=\myvec{\frac{2}{\sqrt{5}} & \frac{-1}{\sqrt{5}} \\ \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}}\myvec{\frac{\sqrt{5}}{2} & \frac{2}{\sqrt{5}} \\ 0 & \frac{3}{2\sqrt{5}}}
+\end{align}
+\end{document}
